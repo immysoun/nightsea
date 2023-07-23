@@ -12,7 +12,7 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGL1Renderer({
-    canvas: document.querySelector('#bg'),
+    canvas: document.querySelector('#bg')!,
 });
 
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -28,12 +28,12 @@ function addStar()
     const material = new THREE.MeshStandardMaterial({color: 0xffffff});
     const star = new THREE.Mesh(geometry, material);
 
-    const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread (100));
+    const [x, y, z] = Array(3).fill(undefined).map(() => THREE.MathUtils.randFloatSpread (100));
     star.position.set(x, y, z);
     scene.add(star);
 }
 
-Array(1000).fill().forEach(addStar);
+Array(1000).fill(undefined).forEach(addStar);
 
 function moveCamera()
 {
