@@ -7,12 +7,12 @@ createApp(App).mount('#app');
 
 import * as THREE from 'three';
 
-const scene = new THREE.Scene();
-
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
 let width = window.innerWidth
 let height = window.innerHeight
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
 
 window.addEventListener('resize', () => {
     width = window.innerWidth
