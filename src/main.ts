@@ -25,10 +25,11 @@ window.addEventListener('resize', () => {
 
 const renderer = new THREE.WebGL1Renderer({
     canvas: document.querySelector('#bg')!,
+    antialias: true
 });
 
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(width, height);
 camera.position.setZ(30);
 
 const ambientLight = new THREE.AmbientLight(0xffffff);
